@@ -18,6 +18,7 @@
   --title-decor-color: #000028;
   --content-text-color: #F1B2CE;
   --border-hover-color: rgb(255 0 112 / 0.4);
+  --rec: block;
 }/*
   Переменные для вашего проекта
   и их переопределение под различные устройства

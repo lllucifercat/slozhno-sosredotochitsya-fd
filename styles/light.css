@@ -19,6 +19,7 @@
   --title-section-color: #353430;
   --content-text-color: #353430;
   --border-hover-color: rgb(50 49 45/ 0.4);
+  --rec: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -32,9 +33,6 @@
   --title-section-color: #353430;
   --content-text-color: #353430;
   --border-hover-color: rgb(50 49 45/ 0.4);
+  --rec: none;
   }
-}
-
-.theme-light .decorated-rec {
-  display: none;
 }

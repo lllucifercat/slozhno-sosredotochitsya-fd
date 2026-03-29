@@ -25,7 +25,7 @@
 }
 
 .decorated-rec {
-  display: block;
+  display: var(--rec);
   text-transform: uppercase;
   font-weight: normal;
   position: absolute;
@@ -199,6 +199,10 @@ h4.content__section-list-item-title {
   border-block-end: 1px currentColor solid;
 }
 
+.content__link:focus {
+  outline: none;
+}
+
 .content__link:focus-visible {
   outline: 1px currentColor solid;
 }
@@ -343,7 +347,6 @@ h4.content__section-list-item-title {
   }
 
   .footer {
-  max-block-size: 100vh;
   min-block-size: 728px;
   }
 }
