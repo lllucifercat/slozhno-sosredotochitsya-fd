@@ -223,7 +223,7 @@ h4.content__section-list-item-title {
 
 .footer {
   position: relative;
-
+  max-block-size: 100vh;
   min-block-size: 647px;
   display: grid;
   grid-template-columns: 1fr;
