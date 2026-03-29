@@ -2,4 +2,348 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-img);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: var(--bg-color);
+  font-family: var(--main-font);
+  padding: var(--padding-page);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.header {
+  max-block-size: 100vh;
+  min-block-size: 648px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  grid-template-columns: 1fr;
+  position: relative;
+  margin-bottom: var(--padding-page) ;
+}
+
+.decorated-rec {
+  display: block;
+  text-transform: uppercase;
+  font-weight: normal;
+  position: absolute;
+  color: var(--accent-color);
+  font-size: 18px;
+  line-height: 1.5625em;
+  top: 0;
+  right: 18px;
+}
+
+.decorated-rec::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  top: 7px;
+  background-color: var(--accent-color);
+  block-size: 9px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  top: 0;
+  right: 0;
+  border-inline-end: 1px var(--button-color) solid;
+  border-block-start: 1px var(--button-color) solid;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  bottom: 0;
+  left: 0;
+  border-block-end: 1px var(--button-color) solid;
+  border-inline-start: 1px var(--button-color) solid;
+}
+
+.header__theme-menu {
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  color: var(--button-color);
+  text-transform: lowercase;
+  font-size: 18px;
+  line-height: 18px;
+  border: 1px transparent solid;
+  padding: 1.5px 13px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px var(--button-color) solid;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px var(--border-hover-color) solid;
+}
+
+.header__theme-menu-button:focus {
+  outline: none
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px var(--accent-color) solid;
+}
+
+.header__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: bold;
+  line-height: 83%;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  grid-row: 2;
+}
+
+.title-decor {
+  color: var(--title-decor-color);
+  background-color: var(--accent-color);
+}
+
+.header__text {
+  max-inline-size: 364px;
+  align-self: center;
+  justify-self: end;
+  font-size: var(--main-font-size);
+  font-weight: bold;
+  line-height: 23.4px;
+  grid-row: 3;
+}
+
+.br-stroke {
+  display: block;
+}
+
+.content {
+  font-size: var(--main-font-size);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  line-height: 23.4px;
+}
+
+.content__section {
+  display: grid;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content__section-title {
+  color: var(--title-section-color);
+  font-weight: bold;
+  font-size: var(--main-font-size);
+}
+
+.content__section__nested {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.content__section-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content__section-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content__section-list-item-title {
+  font-size: var(--main-font-size);
+}
+
+h4.content__section-list-item-title {
+  font-weight: normal;
+}
+
+.content__section-text {
+  color: var(--content-text-color);
+}
+
+.content__link {
+  text-decoration: none;
+  text-shadow: 2px 1.5px 0 var(--accent-color);
+}
+
+.content__link:hover {
+  border-block-end: 1px currentColor solid;
+}
+
+.content__link:focus-visible {
+  outline: 1px currentColor solid;
+}
+
+.gallery {
+  gap: var(--padding-page);
+}
+
+.content__images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--padding-page);
+}
+
+.content__images-item img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.footer {
+  position: relative;
+
+  min-block-size: 647px;
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: var(--padding-page) 0;
+}
+
+.footer__title {
+  color: var(--title-color);
+  font-weight: bold;
+  line-height: 83%;
+  text-shadow: 2px 2px 0 var(--accent-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+}
+
+@media (width >= 768px) {
+  :root {
+    --padding-page: 20px;
+  }
+
+  .page {
+    gap: 60px;
+  }
+  
+  .header {
+    min-block-size: 984px;
+  }
+  
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    position: relative;
+    right: var(--padding-page);
+  }
+
+  .header__text {
+    width: calc(100vw / 2);
+  }
+  .content {
+    gap: 80px;
+  }
+
+  .add-visual-grid {
+    grid-template-columns: 236px 1fr;
+  }
+
+  .content__section-title {
+    max-width: 236px;
+  }
+
+  .content__images {
+    grid-template: repeat(3, auto) / repeat(3, 1fr);
+    gap: var(--padding-page);
+  }
+
+  .content__images-item:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  .content__images-item:nth-child(2) {
+    grid-column: 3;
+    grid-row: span 2;
+  }
+  .content__images-item:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+  .content__images-item:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .content__images-item:nth-child(5) {
+    grid-column: 2 / 4;
+    grid-row: 3;
+  }
+
+  .footer {
+  min-block-size: 984px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-height: 728px;
+  }
+  .header__text {
+    max-inline-size: 491px;
+  }
+
+  .header__theme-menu {
+    align-self: start;
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .add-visual-grid {
+    grid-template-columns: 315px 1fr;
+  }
+  
+  .add-visual-grid-direction .content__section-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(314px, 1fr));
+  }
+  
+  .content__section-title {
+    max-width: 315px;
+    width: 100%;
+  }
+
+  .footer {
+  max-block-size: 100vh;
+  min-block-size: 728px;
+  }
 }
